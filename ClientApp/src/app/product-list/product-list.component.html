@@ -1,0 +1,32 @@
+<p></p>
+<h6> Shopping Options</h6>
+<div>
+  <button class = "button3" (click)='ShoppingCartDisplay()'> View Shopping Cart</button>
+  <button class = "button3" (click)='toggleId()'>{{buttonDisplayValue}}</button>
+  <button class = "button3" (click)="addProduct()">Add</button>
+</div>
+<p></p>
+<h1> Shop</h1>
+<div *ngFor="let product of products" class="row">
+
+  <button class="button" (click)="AddToShoppingCart(product)">Add To Shopping Cart</button>
+  <p class="productDetails" *ngIf="showId">{{product.productId}}</p>
+  <p class="productDetails">{{product.productName}}</p>
+  <p class="productDetails"> {{ product.price}}</p>
+  <p class="productDetails">{{product.description}} </p>
+  <app-stars [rating]='product.starRating'> </app-stars>
+  <img class="imgProp" [src]='product.imageUrl' [title]='product.productName' (click)='someFunction()' />
+  <button class = "button2" (click)="deleteProduct(product.productId)">Delete</button>
+</div>
+<div *ngIf="showShoppingCart">
+  <h1>Shopping Cart</h1>
+  <div *ngFor="let product of ShoppingProducts" class="row">
+    <p class="productDetails">{{product.productName}}</p>
+    <p class="productDetails"> {{ product.price}}</p>
+    <img class="imgProp" [src]='product.imageUrl' [title]='product.productName' (click)='someFunction()' />
+    <button class = "button2" (click)="deleteFromShoppingCart(product.productId)">Delete</button>
+  </div>
+  <p></p>
+  <p>               Total Cost</p>
+  <p class="total"> $ {{ totalCost}}</p>
+</div>
