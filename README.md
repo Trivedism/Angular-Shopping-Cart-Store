@@ -1,4 +1,4 @@
-### Created a shopping store with angular to practice web building, rest calls, typescript, and angular structure
+### Created a shopping store with angular to practice web building with hmtl,typescript,scss rest calls, and angular structure
 
 *Implemented features*
 * add product to shop,
